@@ -49,7 +49,7 @@ header nav a:hover {
 .banner {
   position: relative;
   text-align: center;
-  padding: 130px 20px;
+  padding: 280px 20px;
   color: white;
   background: url('banner.jpg') no-repeat center center/cover;
 }
@@ -95,12 +95,13 @@ header nav a:hover {
 }
 
 .about-image img {
-  width: 230px;
-  height: 230px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
 
 .about-text {
   flex: 1;

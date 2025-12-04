@@ -1,13 +1,128 @@
----
-layout: home
-title: "Your Name"
-subtitle: "Research Scholar | Department of Civil Engineering | IIT ___"
-profile_img: "assets/img/profile.jpg"
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mitan — Homepage (About)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4;--white:#e6eef6}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071226 0%, #071a2a 100%);color:var(--white);line-height:1.5}
+    .container{max-width:980px;margin:36px auto;padding:24px}
+    nav{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin-bottom:18px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.03);color:var(--white)}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,#0b1220,#123));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+    h1{margin:0 0 6px 0;font-size:28px}
+    h2{color:var(--accent);margin:18px 0 8px}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;margin-top:12px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    ul{margin:6px 0 0 18px}
+    .projects h3{margin:12px 0 6px}
+    .contact p{margin:6px 0}
+    footer{margin-top:26px;color:var(--muted);font-size:13px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-Welcome! I am a Research Scholar in the Department of Civil Engineering at IIT Delhi.  
-My research focuses on **microplastic contamination in soils**, **urban catchment analysis**, and **geospatial modelling**.
+    <header id="home">
+      <div>
+        <h1>Hello!, This is Mitan Das here. </h1>
+        <div style="color:var(--muted)">Research Scholar</div>
+      </div>
+    </header>
 
+    <main class="grid">
+      <section>
+        <article id="about" class="card">
+          <h2>About Me</h2>
+          <p>With a strong interest in applying Geospatial technologies in the field of water resources, my research work centres on assessing and identifying microplastic contamination in soils in urban catchment using advanced geospatial techniques. By integrating Remote sensing datasets and Geospatial technologies, I aim to identify potential microplastic contamination zones. </p>
 
-🔹 **Email:** yourname@iit.ac.in  
-🔹 **ORCID:** 0000-0000-0000-0000  
+          <h3>Education</h3>
+          <ul>
+            <li>2025 to Current — Ph.D. in Civil Engineering, Indian Institute of Technology Delhi — CPI: 8.5/10</li>
+            <li>2022 to 2024 — M.Tech. in Civil Engineering, Indian Institute of Technology Guwahati — CPI: 8.2/10</li>
+            <li>2015 to 2018 — B.Tech. in Civil Engineering, MAKAUT,WB — DGPA: 8.8/10</li>
+            <li>2012 to 2015 — Diploma in Survey Engineering, WBSCTE — OVERALL PERCENTAGE: 83%</li>
+          </ul>
+
+          <h3>Experience</h3>
+          <ul>
+            <li>2024 to Current — Teaching Assistantships, IIT Delhi</li>
+            <li>2022 to 2024 — Teaching Assistantships, IIT Guwahati</li>
+            <li>2019-2020 — Lecturer in Diploma Engineering College</li>
+            <li>2017 — Industrial trainee, CPWD kolkata </li>
+          </ul>
+
+          <h3>Skills</h3>
+          <ul>
+            <li>Effective Teaching</li>
+            <li>Hydrologic Modelling Computing</li>
+            <li>Remote Sensing, GIS, GNSS, AutoCAD</li>
+            <li>Public Speaking</li>
+          </ul>
+        </article>
+
+        <section id="projects" class="card projects">
+          <h2>My Projects</h2>
+
+          <h3>Impact of Meteorology on Air Pollution Episodes</h3>
+          <p>Determining the factors influencing the air pollution and regional transport contribution to PM10 and PM2.5 concentration over Guwahati.</p>
+
+          <h3>Design and Cost Estimation of Air Pollution Control Units</h3>
+          <p>Design of Pollution Control Devices for the Cement Industry to remove pollutants like Particulate Matter, SOx and NOx.</p>
+
+          <h3>Rotary Drum Composting</h3>
+          <p>Quality check of Compost prepared by taking different proportions of Vegetable waste, Cattle Manure &amp; Saw Dust</p>
+
+          <h3>Optimization Models</h3>
+          <p>Optimization Model For Reservoir Based Irrigation System Using Artificial Bee Colony Algorithm</p>
+
+          <h3>Study of Acid Attack on Concrete</h3>
+          <p>Concrete Prepared by taking different proportions of GGBFS, GBFS, Lime &amp; Recycled Aggregate &amp; resistance to acid attack tested.</p>
+        </section>
+
+        <section id="publications" class="card">
+          <h2>My Publications</h2>
+          <h4>Understanding meteorological factors influencing heavy air pollution in Guwahati, India</h4>
+        </section>
+      </section>
+
+      <aside class="card">
+        <section id="contact" class="contact">
+          <h2>Contact Me</h2>
+          <p>scholar2606@gmail.com</p>
+          <p>24D1262@iitb.ac.in</p>
+          <p>+91-8338951771</p>
+
+          <h3>Address</h3>
+          <p>Aerosol and Nanoparticle Technology Laboratory<br>
+          Environmental Science and Engineering Department<br>
+          507, DESE-ESED Building<br>
+          Indian Institute of Technology Bombay<br>
+          Powai, Mumbai, India 400076</p>
+
+          <form style="margin-top:8px">
+            <label for="msg">Message</label><br>
+            <textarea id="msg" rows="4" style="width:100%;border-radius:6px;padding:8px"></textarea>
+            <button type="button" style="margin-top:8px;padding:8px 12px;border-radius:8px;border:none;background:var(--accent);color:#062024;cursor:pointer">Submit</button>
+          </form>
+        </section>
+
+        <footer>
+          Copyright © 2025 Nishant Behera. All Rights Reserved.
+        </footer>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

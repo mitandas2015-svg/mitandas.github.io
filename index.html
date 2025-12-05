@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mitan — Homepage (About)</title>
+  <meta name="description" content="Mitan Das - PhD Research Scholar at IIT Delhi specializing in microplastics contamination and geospatial technologies in water resources">
+  <title>Mitan Das — Research Scholar, IIT Delhi</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {
       --bg:#0f1724;
@@ -11,6 +13,10 @@
       --muted:#94a3b8;
       --accent:#06b6d4;
       --white:#e6eef6;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -33,6 +39,7 @@
       align-items:center;
       justify-content:flex-start;
       margin-bottom:18px;
+      flex-wrap:wrap;
     }
 
     nav a {
@@ -40,6 +47,7 @@
       text-decoration:none;
       padding:8px 10px;
       border-radius:8px;
+      transition: all 0.2s ease;
     }
 
     nav a:hover {
@@ -47,16 +55,22 @@
       color:var(--white);
     }
 
-    header {
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      text-align:right;
-      padding:120px 20px;
+    .banner {
+      width:100%;
       height:400px;
       background-size:cover;
       background-position:center;
-      position:relative;
+      background-image:url('banner.jpg');
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .intro-section {
+      display:flex;
+      gap:24px;
+      align-items:center;
+      margin-top:32px;
+      flex-wrap:wrap;
     }
 
     .profile-pic {
@@ -65,43 +79,66 @@
       border-radius:50%;
       object-fit:cover;
       box-shadow:0 4px 12px rgba(0,0,0,0.3);
+      flex-shrink:0;
     }
 
-    h1 {
-      margin:0 0 6px 0;
-      font-size:28px;
+    .intro-text {
+      flex:1;
+      min-width:250px;
+    }
+
+    .intro-text h1 {
+      margin:0 0 8px 0;
+      font-size:32px;
+      color:var(--white);
+    }
+
+    .intro-text p {
+      margin:0;
+      font-size:18px;
+      color:var(--accent);
+      font-weight:500;
     }
 
     h2 {
       color:var(--accent);
       margin:18px 0 8px;
+      font-size:22px;
     }
 
     h3 {
-      margin-top:12px;
+      margin:16px 0 8px;
+      font-size:18px;
     }
 
     .card {
       background:rgba(255,255,255,0.02);
-      padding:18px;
+      padding:20px;
       border-radius:12px;
-      margin-top:12px;
+      margin-top:20px;
+      border:1px solid rgba(255,255,255,0.05);
     }
 
     ul {
       margin:6px 0 0 18px;
+      padding-left:12px;
+    }
+
+    ul li {
+      margin-bottom:8px;
     }
 
     .projects h3 {
-      margin:12px 0 6px;
+      margin:16px 0 8px;
     }
 
     .contact p {
-      margin:6px 0;
+      margin:8px 0;
     }
 
     footer {
-      margin-top:26px;
+      margin-top:32px;
+      padding:20px 0;
       color:var(--muted);
       font-size:13px;
       text-align:center;
@@ -120,24 +157,76 @@
       text-decoration: underline;
     }
 
-    @media (max-width:900px) {
-      header {
-        flex-direction:column;
-        text-align:center;
-        padding:80px 20px;
-      }
-      .about-container {
-        flex-direction:column;
-        align-items:center;
-      }
+    /* Form styling */
+    form {
+      margin-top:16px;
     }
 
-    .about-container {
-      display:flex;
-      gap:20px;
-      align-items:center;
-      margin-top:24px;
-      flex-wrap:wrap;
+    label {
+      display:block;
+      margin-bottom:6px;
+      font-weight:500;
+    }
+
+    textarea {
+      width:100%;
+      border-radius:8px;
+      padding:10px;
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.05);
+      color:var(--white);
+      font-family:inherit;
+      font-size:14px;
+      resize:vertical;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+      outline:none;
+      border-color:var(--accent);
+    }
+
+    button[type="submit"] {
+      margin-top:12px;
+      padding:10px 20px;
+      border-radius:8px;
+      border:none;
+      background:var(--accent);
+      color:#062024;
+      font-weight:600;
+      cursor:pointer;
+      transition: all 0.2s ease;
+      font-size:14px;
+    }
+
+    button[type="submit"]:hover {
+      background:#08d4f0;
+      transform:translateY(-1px);
+      box-shadow:0 4px 8px rgba(6,182,212,0.3);
+    }
+
+    @media (max-width:768px) {
+      .banner {
+        height:300px;
+      }
+      
+      .intro-section {
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+      }
+
+      .intro-text h1 {
+        font-size:26px;
+      }
+
+      .intro-text p {
+        font-size:16px;
+      }
+
+      nav {
+        justify-content:center;
+      }
     }
   </style>
 </head>
@@ -155,23 +244,22 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Home Banner -->
-    <header id="home" style="background-image:url('banner.jpg');">
-      <div>
+    <!-- Banner Image -->
+    <div id="home" class="banner" role="img" aria-label="Banner image"></div>
+
+    <!-- Intro Section with Profile Picture -->
+    <div class="intro-section">
+      <img src="myphoton.jpg" alt="Mitan Das - Research Scholar at IIT Delhi" class="profile-pic">
+      <div class="intro-text">
         <h1>Hello! This is Mitan Das</h1>
         <p>Research Scholar, IIT Delhi</p>
       </div>
-    </header>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="card">
-      <div class="about-container">
-        <img src="myphoton.jpg" alt="Profile Photo" class="profile-pic">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>With a strong interest in applying Geospatial technologies in the field of water resources, my research work centres on assessing and identifying microplastic contamination in soils in urban catchments using advanced geospatial techniques. By integrating remote sensing datasets and geospatial technologies, I aim to identify potential microplastic contamination zones.</p>
-        </div>
-      </div>
+      <h2>About Me</h2>
+      <p>With a strong interest in applying Geospatial technologies in the field of water resources, my research work centres on assessing and identifying microplastic contamination in soils in urban catchments using advanced geospatial techniques. By integrating remote sensing datasets and geospatial technologies, I aim to identify potential microplastic contamination zones.</p>
 
       <h3>Education</h3>
       <ul>
@@ -245,10 +333,10 @@
         Hauz Khas, Delhi, India 110016
       </p>
 
-      <form style="margin-top:8px;">
-        <label for="msg">Message</label><br>
-        <textarea id="msg" rows="4" style="width:100%;border-radius:6px;padding:8px"></textarea>
-        <button type="button" style="margin-top:8px;padding:8px 12px;border-radius:8px;border:none;background:var(--accent);color:#062024;cursor:pointer;">Submit</button>
+      <form action="mailto:mitandas2018n@gmail.com" method="post" enctype="text/plain">
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+        <button type="submit">Submit</button>
       </form>
     </section>
 

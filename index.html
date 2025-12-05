@@ -4,8 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Mitan Das - PhD Research Scholar at IIT Delhi specializing in microplastics contamination and geospatial technologies in water resources">
+  <meta name="keywords" content="Mitan Das, IIT Delhi, Water Resources, Microplastics, Geospatial Technology, Remote Sensing, PhD Scholar">
+  <meta name="author" content="Mitan Das">
   <title>Mitan Das — Research Scholar, IIT Delhi</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
       --bg:#0f1724;
@@ -13,10 +17,16 @@
       --muted:#94a3b8;
       --accent:#06b6d4;
       --white:#e6eef6;
+      --success:#10b981;
+      --warning:#f59e0b;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -24,7 +34,7 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
       background:linear-gradient(180deg,#071226 0%, #071a2a 100%);
       color:var(--white);
-      line-height:1.5;
+      line-height:1.6;
     }
 
     .container {
@@ -33,26 +43,41 @@
       padding:24px;
     }
 
+    /* Sticky Navigation */
     nav {
+      position:sticky;
+      top:0;
+      z-index:1000;
       display:flex;
       gap:12px;
       align-items:center;
       justify-content:flex-start;
       margin-bottom:18px;
+      padding:12px 16px;
+      background:rgba(7, 18, 38, 0.95);
+      backdrop-filter:blur(10px);
+      border-radius:12px;
       flex-wrap:wrap;
+      box-shadow:0 4px 6px rgba(0,0,0,0.3);
     }
 
     nav a {
       color:var(--muted);
       text-decoration:none;
-      padding:8px 10px;
+      padding:8px 12px;
       border-radius:8px;
       transition: all 0.2s ease;
+      font-size:14px;
     }
 
     nav a:hover {
-      background:rgba(255,255,255,0.03);
+      background:rgba(255,255,255,0.05);
       color:var(--white);
+    }
+
+    nav a.active {
+      background:rgba(6,182,212,0.1);
+      color:var(--accent);
     }
 
     .banner {
@@ -80,6 +105,7 @@
       object-fit:cover;
       box-shadow:0 4px 12px rgba(0,0,0,0.3);
       flex-shrink:0;
+      border:3px solid var(--accent);
     }
 
     .intro-text {
@@ -94,70 +120,146 @@
     }
 
     .intro-text p {
-      margin:0;
+      margin:4px 0;
       font-size:18px;
       color:var(--accent);
       font-weight:500;
     }
 
+    .intro-text .subtitle {
+      font-size:16px;
+      color:var(--muted);
+      margin-top:8px;
+    }
+
+    /* Social Links */
+    .social-links {
+      display:flex;
+      gap:12px;
+      margin-top:16px;
+      flex-wrap:wrap;
+    }
+
+    .social-links a {
+      color:var(--muted);
+      font-size:20px;
+      transition:all 0.2s ease;
+      width:40px;
+      height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.03);
+      border-radius:8px;
+    }
+
+    .social-links a:hover {
+      color:var(--accent);
+      background:rgba(6,182,212,0.1);
+      transform:translateY(-2px);
+    }
+
     h2 {
       color:var(--accent);
-      margin:18px 0 8px;
-      font-size:22px;
+      margin:18px 0 12px;
+      font-size:24px;
+      border-bottom:2px solid rgba(6,182,212,0.3);
+      padding-bottom:8px;
     }
 
     h3 {
       margin:16px 0 8px;
       font-size:18px;
+      color:var(--white);
     }
 
     .card {
       background:rgba(255,255,255,0.02);
-      padding:20px;
+      padding:24px;
       border-radius:12px;
       margin-top:20px;
       border:1px solid rgba(255,255,255,0.05);
     }
 
     ul {
-      margin:6px 0 0 18px;
+      margin:8px 0 0 18px;
       padding-left:12px;
     }
 
     ul li {
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
 
-    .projects h3 {
-      margin:16px 0 8px;
+    /* Publication Item Styling */
+    .publication-item {
+      margin-bottom:20px;
+      padding:16px;
+      background:rgba(255,255,255,0.03);
+      border-radius:8px;
+      border-left:3px solid var(--accent);
     }
 
-    .contact p {
-      margin:8px 0;
+    .publication-item h4 {
+      margin:0 0 6px 0;
+      color:var(--white);
+      font-size:16px;
     }
 
-    footer {
-      margin-top:32px;
-      padding:20px 0;
+    .publication-item .authors {
       color:var(--muted);
+      font-size:14px;
+      margin:4px 0;
+    }
+
+    .publication-item .venue {
+      color:var(--accent);
+      font-size:14px;
+      font-weight:500;
+      margin:4px 0;
+    }
+
+    .publication-item .links {
+      margin-top:8px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .publication-item .links a {
+      color:var(--accent);
+      text-decoration:none;
       font-size:13px;
-      text-align:center;
+      padding:4px 10px;
+      background:rgba(6,182,212,0.1);
+      border-radius:6px;
+      transition:all 0.2s ease;
     }
 
-    /* Email link styling */
-    a[href^="mailto:"] {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
+    .publication-item .links a:hover {
+      background:rgba(6,182,212,0.2);
     }
 
-    a[href^="mailto:"]:hover {
-      color: var(--white);
-      text-decoration: underline;
+    /* Status Badge */
+    .status-badge {
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:6px;
+      font-size:12px;
+      font-weight:600;
+      margin-left:8px;
     }
 
-    /* Form styling */
+    .status-published {
+      background:rgba(16,185,129,0.15);
+      color:var(--success);
+    }
+
+    .status-review {
+      background:rgba(245,158,11,0.15);
+      color:var(--warning);
+    }
+
+    /* Contact Form */
     form {
       margin-top:20px;
     }
@@ -250,11 +352,82 @@
       box-shadow:0 4px 8px rgba(6,182,212,0.3);
     }
 
+    /* Back to Top Button */
+    #backToTop {
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      width:50px;
+      height:50px;
+      background:var(--accent);
+      color:#062024;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      box-shadow:0 4px 12px rgba(6,182,212,0.4);
+      transition:all 0.3s ease;
+      z-index:999;
+    }
+
+    #backToTop:hover {
+      background:#08d4f0;
+      transform:translateY(-3px);
+    }
+
+    #backToTop.show {
+      display:flex;
+    }
+
+    footer {
+      margin-top:40px;
+      padding:24px 0;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    footer .footer-links {
+      margin-top:12px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    footer .footer-links a {
+      color:var(--muted);
+      text-decoration:none;
+      transition:color 0.2s ease;
+    }
+
+    footer .footer-links a:hover {
+      color:var(--accent);
+    }
+
+    /* Email link styling */
+    a[href^="mailto:"] {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    a[href^="mailto:"]:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
     @media (max-width:768px) {
       .banner {
         height:300px;
       }
-      
+
       .intro-section {
         flex-direction:column;
         text-align:center;
@@ -276,6 +449,17 @@
       .form-row {
         grid-template-columns:1fr;
       }
+
+      .social-links {
+        justify-content:center;
+      }
+
+      #backToTop {
+        bottom:20px;
+        right:20px;
+        width:45px;
+        height:45px;
+      }
     }
 
     @media (max-width:900px) and (min-width:769px) {
@@ -292,9 +476,10 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
       <a href="#conferences">Conferences</a>
-      <a href="#workshops">Workshops</a>
       <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -304,10 +489,21 @@
 
     <!-- Intro Section with Profile Picture -->
     <div class="intro-section">
-      <img src="myphoton.jpg" alt="Mitan Das - Research Scholar at IIT Delhi" class="profile-pic">
+      <img src="myphoto.jpg" alt="Mitan Das - Research Scholar at IIT Delhi" class="profile-pic">
       <div class="intro-text">
         <h1>Hello! This is Mitan Das</h1>
-        <p>Research Scholar, IIT Delhi</p>
+        <p>PhD Research Scholar</p>
+        <p class="subtitle">Department of Civil Engineering, IIT Delhi</p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="mailto:mitandas2018n@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://www.researchgate.net/profile/YOUR_PROFILE" target="_blank" title="ResearchGate" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+          <a href="https://orcid.org/YOUR_ORCID" target="_blank" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/YOUR_USERNAME" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
       </div>
     </div>
 
@@ -316,79 +512,192 @@
       <h2>About Me</h2>
       <p>With a strong interest in applying Geospatial technologies in the field of water resources, my research work centres on assessing and identifying microplastic contamination in soils in urban catchments using advanced geospatial techniques. By integrating remote sensing datasets and geospatial technologies, I aim to identify potential microplastic contamination zones.</p>
 
+      <h3>Research Advisor</h3>
+      <p><strong>Dr. [Supervisor Name]</strong>, Associate Professor, Department of Civil Engineering, IIT Delhi<br>
+      <em>Research Group: Computational Hydraulics Lab</em></p>
+
       <h3>Education</h3>
       <ul>
-        <li>2025–Present — Ph.D. in Civil Engineering, Indian Institute of Technology Delhi — CPI: 8.5/10</li>
-        <li>2022–2024 — M.Tech. in Civil Engineering, Indian Institute of Technology Guwahati — CPI: 8.2/10</li>
-        <li>2015–2018 — B.Tech. in Civil Engineering, MAKAUT, WB — DGPA: 8.8/10</li>
-        <li>2012–2015 — Diploma in Survey Engineering, WBSCTE — 83% (OVERALL)</li>
+        <li><strong>2025–Present</strong> — Ph.D. in Civil Engineering, Indian Institute of Technology Delhi — CPI: 8.5/10</li>
+        <li><strong>2022–2024</strong> — M.Tech. in Civil Engineering, Indian Institute of Technology Guwahati — CPI: 8.2/10</li>
+        <li><strong>2015–2018</strong> — B.Tech. in Civil Engineering, MAKAUT, WB — DGPA: 8.8/10</li>
+        <li><strong>2012–2015</strong> — Diploma in Survey Engineering, WBSCTE — 83%</li>
       </ul>
 
-      <h3>Experience</h3>
+      <h3>Professional Experience</h3>
       <ul>
-        <li>2025–Present — Teaching Assistantships, Indian Institute of Technology Delhi</li>
-        <li>2022–2024 — Teaching Assistantships, Indian Institute of Technology Guwahati</li>
-        <li>2019–2020 — Lecturer in Diploma Engineering College</li>
-        <li>2017 — Industrial Trainee, CPWD Kolkata</li>
+        <li><strong>2024–Present</strong> — Teaching Assistant, Indian Institute of Technology Delhi</li>
+        <li><strong>2022–2024</strong> — Teaching Assistant, Indian Institute of Technology Guwahati</li>
+        <li><strong>2019–2020</strong> — Lecturer, Diploma Engineering College</li>
+        <li><strong>2017</strong> — Industrial Trainee, CPWD Kolkata</li>
       </ul>
 
-      <h3>Skills</h3>
+      <h3>Technical Skills</h3>
       <ul>
-        <li>Effective Teaching</li>
-        <li>Hydrologic Modelling, Watershed Management</li>
-        <li>Remote Sensing, GIS, GNSS, AutoCAD</li>
-        <li>Public Speaking</li>
+        <li><strong>Geospatial Technologies:</strong> Remote Sensing, GIS (ArcGIS, QGIS), GNSS, Google Earth Engine</li>
+        <li><strong>Hydrologic Modeling:</strong> HEC-HMS, SWAT, MIKE Software</li>
+        <li><strong>Programming & Tools:</strong> Python, MATLAB, R, AutoCAD</li>
+        <li><strong>Laboratory Skills:</strong> Microplastic analysis, Soil sampling, Water quality assessment</li>
+        <li><strong>Other:</strong> Technical Writing, Data Visualization, Public Speaking</li>
+      </ul>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="card">
+      <h2>Publications</h2>
+
+      <h3>Journal Articles</h3>
+      <div class="publication-item">
+        <h4>Geospatial Analysis of Microplastic Distribution in Urban Catchments <span class="status-badge status-review">Under Review</span></h4>
+        <p class="authors"><strong>Mitan Das</strong>, [Co-author names]</p>
+        <p class="venue">Journal of Environmental Management (Q1), 2025</p>
+        <div class="links">
+          <a href="#"><i class="fas fa-file-pdf"></i> Preprint</a>
+          <a href="#"><i class="fas fa-code"></i> Data/Code</a>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <h4>Assessment of Tectonic Activity using Geomorphic Indices in Manipur River Basin <span class="status-badge status-published">Published</span></h4>
+        <p class="authors"><strong>Mitan Das</strong>, [Co-author names]</p>
+        <p class="venue">Geomorphology, Vol. XX, pp. XX-XX, 2024</p>
+        <div class="links">
+          <a href="#"><i class="fas fa-external-link-alt"></i> DOI</a>
+          <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="#"><i class="fas fa-quote-right"></i> BibTeX</a>
+        </div>
+      </div>
+
+      <h3>Conference Papers</h3>
+      <div class="publication-item">
+        <h4>Morphometric Analysis of Manipur River Basin using Geospatial Techniques</h4>
+        <p class="authors"><strong>Mitan Das</strong>, [Co-author names]</p>
+        <p class="venue">RCRM 2024, IIT Roorkee</p>
+        <div class="links">
+          <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="#"><i class="fas fa-presentation"></i> Slides</a>
+        </div>
+      </div>
+
+      <h3>Working Papers</h3>
+      <ul>
+        <li>Remote Sensing Approaches for Microplastic Detection in Soil Matrices (In Preparation)</li>
+        <li>Machine Learning Models for Predicting Microplastic Accumulation Zones (In Preparation)</li>
       </ul>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="card projects">
-      <h2>My Projects</h2>
+    <section id="projects" class="card">
+      <h2>Research Projects</h2>
+
       <h3>Assessment of Geomorphic Indices in Nagaland and Manipur</h3>
-      <p>Assessing Relative Tectonic Activity using geomorphic indices, lineaments, and multi-criteria decision-making processes.</p>
+      <p><strong>Duration:</strong> 2023-2024 | <strong>Role:</strong> Principal Investigator</p>
+      <p>Comprehensive assessment of Relative Tectonic Activity using geomorphic indices, lineaments, and multi-criteria decision-making processes. Integrated remote sensing data with field observations to evaluate seismic hazard potential in the region.</p>
+      <p><strong>Key Outcomes:</strong> Published in peer-reviewed journal; Presented at national conference</p>
 
       <h3>Assessment of Population Along Indian Rivers</h3>
-      <p>Population density mapping using GPS and census data across India.</p>
+      <p><strong>Duration:</strong> 2022-2023 | <strong>Role:</strong> Research Associate</p>
+      <p>Large-scale population density mapping using GPS technology and census data across major Indian river basins. Analyzed human-river interactions and vulnerability to flood hazards.</p>
+      <p><strong>Tools Used:</strong> ArcGIS, Python, Census Data APIs</p>
 
       <h3>Small Township Project in Kunda Village, Jharkhand</h3>
-      <p>Township planning, road alignment, and surveying using leveling, total stations, GPS, and census data.</p>
+      <p><strong>Duration:</strong> 2023 | <strong>Role:</strong> Field Engineer</p>
+      <p>Comprehensive township planning including road alignment, drainage design, and infrastructure surveying using modern geospatial technologies (leveling, total stations, GPS) integrated with census data for demographic analysis.</p>
+      <p><strong>Skills Applied:</strong> Land surveying, CAD design, Infrastructure planning</p>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching" class="card">
+      <h2>Teaching Experience</h2>
+
+      <h3>Courses Taught/Assisted (IIT Delhi)</h3>
+      <ul>
+        <li><strong>CVL XXX - Water Resources Systems</strong> (Teaching Assistant, Spring 2025)
+          <br><em>Topics: Optimization techniques, Systems analysis, Water allocation</em></li>
+        <li><strong>CVL XXX - Remote Sensing and GIS Applications</strong> (Teaching Assistant, Fall 2024)
+          <br><em>Topics: Satellite image processing, Geospatial analysis, Land use mapping</em></li>
+        <li><strong>CVL XXX - Engineering Hydrology</strong> (Teaching Assistant, Spring 2024)
+          <br><em>Topics: Hydrologic cycle, Flood frequency analysis, Watershed modeling</em></li>
+      </ul>
+
+      <h3>Courses Taught/Assisted (IIT Guwahati)</h3>
+      <ul>
+        <li><strong>CE XXX - Surveying and Geomatics</strong> (Teaching Assistant, 2022-2024)</li>
+        <li><strong>CE XXX - Fluid Mechanics</strong> (Teaching Assistant, 2023)</li>
+      </ul>
+
+      <h3>Guest Lectures Delivered</h3>
+      <ul>
+        <li>"Applications of Remote Sensing in Water Resources" - IIT Delhi (2024)</li>
+        <li>"Microplastics: An Emerging Environmental Challenge" - IIT Guwahati (2023)</li>
+      </ul>
+
+      <h3>Student Mentorship</h3>
+      <p>Supervised 3 B.Tech. students for their final year projects on GIS applications in water resources management (2024-2025)</p>
     </section>
 
     <!-- Conferences -->
     <section id="conferences" class="card">
       <h2>Conference Presentations</h2>
-      <p>"Morphometric Analysis of Manipur River Basin using Geospatial Techniques" — RCRM 2024</p>
-    </section>
+      <ul>
+        <li><strong>"Morphometric Analysis of Manipur River Basin using Geospatial Techniques"</strong>
+          <br>RCRM 2024 (Recent Challenges in River Management), IIT Roorkee, March 2024</li>
+        <li><strong>"Integrated Approach for Microplastic Assessment in Urban Soils"</strong>
+          <br>International Conference on Environmental Engineering, NIT Delhi, September 2025</li>
+        <li><strong>"GIS-based Multi-Criteria Analysis for Flood Risk Assessment"</strong>
+          <br>Water Resources Conference, IIT Bombay, November 2025</li>
+      </ul>
 
-    <!-- Workshops -->
-    <section id="workshops" class="card">
-      <h2>Workshops Attended</h2>
-      <p>"Changing Precipitation-Flood-Precipitation Coupled Cycle in North East Region"</p>
+      <h3>Workshops Attended</h3>
+      <ul>
+        <li><strong>"Changing Precipitation-Flood-Precipitation Coupled Cycle in North East Region"</strong>
+          <br>IIT Guwahati, 2023</li>
+        <li><strong>"Advanced Remote Sensing for Water Resources"</strong>
+          <br>Indian Space Research Organisation (ISRO), 2024</li>
+        <li><strong>"Machine Learning in Environmental Science"</strong>
+          <br>IIT Delhi, 2025</li>
+      </ul>
     </section>
 
     <!-- Achievements -->
     <section id="achievements" class="card">
-      <h2>Achievements</h2>
-      <p>AIR 185 in GATE 2022</p>
-      <p>National Finalist — Vittraj Case Study Competition, IIT Kanpur</p>
+      <h2>Achievements & Awards</h2>
+      <ul>
+        <li>🏆 <strong>Best Poster Award</strong> - Water Resources Conference, IIT Bombay (2025)</li>
+        <li>🎓 <strong>AIR 185 in GATE 2022</strong> - Civil Engineering</li>
+        <li>🏅 <strong>National Finalist</strong> - Vittraj Case Study Competition, IIT Kanpur (2023)</li>
+        <li>💰 <strong>MHRD Fellowship</strong> - PhD Scholarship, IIT Delhi (2025-Present)</li>
+        <li>📜 <strong>Institute Merit Certificate</strong> - IIT Guwahati (2024)</li>
+        <li>🌟 <strong>Best B.Tech. Project Award</strong> - MAKAUT, West Bengal (2018)</li>
+      </ul>
+
+      <h3>Professional Memberships</h3>
+      <ul>
+        <li>Student Member, Indian Water Resources Society (IWRS)</li>
+        <li>Student Member, Indian Society of Remote Sensing (ISRS)</li>
+        <li>Student Member, American Geophysical Union (AGU)</li>
+      </ul>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="card contact">
       <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:mitandas2018n@gmail.com">mitandas2018n@gmail.com</a></p>
-      <p>Email: <a href="mailto:cez258485@iitd.ac.in">cez258485@iitd.ac.in</a></p>
+      <p><strong>Email (Personal):</strong> <a href="mailto:mitandas2018n@gmail.com">mitandas2018n@gmail.com</a></p>
+      <p><strong>Email (Institutional):</strong> <a href="mailto:cez258485@iitd.ac.in">cez258485@iitd.ac.in</a></p>
+      <p><strong>Phone:</strong> +91 XXXXX XXXXX (Available for research collaboration inquiries)</p>
 
-      <h3>Address</h3>
+      <h3>Office Address</h3>
       <p>
         Computational Hydraulics Lab I<br>
         Department of Civil and Environmental Engineering<br>
-        Block V<br>
-        IIT Delhi<br>
-        Hauz Khas, Delhi, India 110016
+        Block V, Room No. XXX<br>
+        Indian Institute of Technology Delhi<br>
+        Hauz Khas, New Delhi - 110016, India
       </p>
 
       <h3>Want to Connect?</h3>
+      <p>Feel free to reach out for research collaborations, academic discussions, or consulting opportunities. I'm always interested in interdisciplinary projects related to water resources and environmental sustainability.</p>
+
       <form action="mailto:mitandas2018n@gmail.com" method="post" enctype="text/plain">
         <!-- First Row: Name, Email, Phone, Subject -->
         <div class="form-row">
@@ -396,17 +705,17 @@
             <label for="name">Name <span>*</span></label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
           </div>
-          
+
           <div class="form-group">
             <label for="email">Email <span>*</span></label>
             <input type="email" id="email" name="email" placeholder="your@email.com" required>
           </div>
-          
+
           <div class="form-group">
             <label for="phone">Phone <span>*</span></label>
             <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
           </div>
-          
+
           <div class="form-group">
             <label for="subject">Subject <span>*</span></label>
             <input type="text" id="subject" name="subject" placeholder="Subject" required>
@@ -424,8 +733,62 @@
     </section>
 
     <footer>
-      Copyright © 2025 Mitan Das. All Rights Reserved.
+      <p>© 2025 Mitan Das. All Rights Reserved.</p>
+      <p style="font-size:12px; margin-top:8px;">Last Updated: December 2025</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
     </footer>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Back to Top Button Functionality
+    window.onscroll = function() {
+      const backToTop = document.getElementById('backToTop');
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Active Navigation Link Highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

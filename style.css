@@ -102,7 +102,6 @@ header nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-
 .about-text {
   flex: 1;
   min-width: 250px;
@@ -121,6 +120,85 @@ header nav a:hover {
 
 .section ul li {
   margin-bottom: 10px;
+}
+
+/* CONTACT SECTION STYLING */
+#contact {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #004080 0%, #0059b3 100%);
+  color: white;
+  margin: 0;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#contact h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.form-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-wrapper iframe {
+  border-radius: 10px;
+  display: block;
+}
+
+/* RESPONSIVE DESIGN FOR CONTACT FORM */
+@media (max-width: 768px) {
+  #contact h3 {
+    font-size: 2rem;
+  }
+  
+  #contact p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .form-wrapper {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .form-wrapper iframe {
+    height: 850px;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    padding: 60px 15px;
+  }
+  
+  #contact h3 {
+    font-size: 1.8rem;
+  }
+  
+  .form-wrapper iframe {
+    height: 900px;
+  }
 }
 
 /* FOOTER */

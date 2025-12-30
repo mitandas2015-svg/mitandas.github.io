@@ -114,13 +114,18 @@ header nav a:hover {
 
 * ADVISOR LINK STYLING - NO UNDERLINE, WHITE COLOR */
 .advisor-link {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .advisor-link:hover {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.advisor-link:visited {
+  color: white !important;
+  text-decoration: none !important;
 }
 
 /* LISTS */

@@ -35,7 +35,7 @@ header nav {
 }
 
 header nav a {
-  color: white;
+  color: white !important;
   text-decoration: none;
   margin: 0 5px;
   font-weight: bold;
@@ -45,37 +45,37 @@ header nav a {
   display: inline-block;
 }
 
-/* COLORFUL TAB STYLING - More specific selector */
+/* COLORFUL TAB STYLING - Using !important for specificity */
 header nav a:nth-of-type(1) {
-  background-color: #3498db; /* Home - Blue */
+  background-color: #3498db !important; /* Home - Blue */
 }
 
 header nav a:nth-of-type(2) {
-  background-color: #e74c3c; /* About - Red */
+  background-color: #e74c3c !important; /* About - Red */
 }
 
 header nav a:nth-of-type(3) {
-  background-color: #2ecc71; /* Projects - Green */
+  background-color: #2ecc71 !important; /* Projects - Green */
 }
 
 header nav a:nth-of-type(4) {
-  background-color: #f39c12; /* Teaching - Orange */
+  background-color: #f39c12 !important; /* Teaching - Orange */
 }
 
 header nav a:nth-of-type(5) {
-  background-color: #9b59b6; /* Conferences - Purple */
+  background-color: #9b59b6 !important; /* Conferences - Purple */
 }
 
 header nav a:nth-of-type(6) {
-  background-color: #1abc9c; /* Publications - Turquoise */
+  background-color: #1abc9c !important; /* Publications - Turquoise */
 }
 
 header nav a:nth-of-type(7) {
-  background-color: #e67e22; /* Achievements - Dark Orange */
+  background-color: #e67e22 !important; /* Achievements - Dark Orange */
 }
 
 header nav a:nth-of-type(8) {
-  background-color: #34495e; /* Contact - Dark Gray */
+  background-color: #34495e !important; /* Contact - Dark Gray */
 }
 
 header nav a:hover {

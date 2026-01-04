@@ -49,11 +49,11 @@
       top:0;
       z-index:1000;
       display:flex;
-      gap:12px;
+      gap:8px;
       align-items:center;
       justify-content:space-evenly;
       margin-bottom:18px;
-      padding:12px 16px;
+      padding:10px 12px;
       background:rgba(7, 18, 38, 0.95);
       backdrop-filter:blur(10px);
       border-radius:12px;
@@ -64,12 +64,13 @@
     nav a {
       color:var(--muted);
       text-decoration:none;
-      padding:8px 12px;
+      padding:8px 10px;
       border-radius:8px;
       transition: all 0.2s ease;
-      font-size:14px;
+      font-size:13px;
       flex: 1;
       text-align: center;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -170,15 +171,13 @@
     }
 
     h3 {
-      margin:32px 0 12px;
+      margin:20px 0 10px;
       font-size:18px;
-      color:var(--accent);
-      border-bottom:1px solid rgba(6,182,212,0.2);
-      padding-bottom:6px;
+      color:var(--white);
     }
 
     h4 {
-      margin:20px 0 8px;
+      margin:16px 0 8px;
       font-size:16px;
       color:var(--white);
       font-weight:600;
@@ -201,166 +200,46 @@
       margin-bottom:10px;
     }
 
-    /* Publication Item Styling */
-    .publication-item {
-      margin-bottom:20px;
-      padding:16px;
-      background:rgba(255,255,255,0.03);
-      border-radius:8px;
-      border-left:3px solid var(--accent);
+    /* Link styling */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
-    .publication-item h4 {
-      margin:0 0 6px 0;
-      color:var(--white);
-      font-size:16px;
+    a:hover {
+      color: var(--white);
     }
 
-    .publication-item .authors {
-      color:var(--muted);
-      font-size:14px;
-      margin:4px 0;
+    /* Email link styling */
+    a[href^="mailto:"] {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
     }
 
-    .publication-item .venue {
-      color:var(--accent);
-      font-size:14px;
-      font-weight:500;
-      margin:4px 0;
+    a[href^="mailto:"]:hover {
+      color: var(--white);
+      text-decoration: underline;
     }
 
-    .publication-item .links {
-      margin-top:8px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+    /* Form wrapper styling */
+    .form-wrapper {
+      margin-top: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .publication-item .links a {
-      color:var(--accent);
-      text-decoration:none;
-      font-size:13px;
-      padding:4px 10px;
-      background:rgba(6,182,212,0.1);
-      border-radius:6px;
-      transition:all 0.2s ease;
+    .contact-container h3 {
+      margin-top: 24px;
+      margin-bottom: 12px;
     }
 
-    .publication-item .links a:hover {
-      background:rgba(6,182,212,0.2);
-    }
-
-    /* Status Badge */
-    .status-badge {
-      display:inline-block;
-      padding:4px 10px;
-      border-radius:6px;
-      font-size:12px;
-      font-weight:600;
-      margin-left:8px;
-    }
-
-    .status-published {
-      background:rgba(16,185,129,0.15);
-      color:var(--success);
-    }
-
-    .status-review {
-      background:rgba(245,158,11,0.15);
-      color:var(--warning);
-    }
-
-    /* Contact Form */
-    form {
-      margin-top:20px;
-    }
-
-    .form-row {
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:12px;
-      margin-bottom:16px;
-    }
-
-    .form-group {
-      display:flex;
-      flex-direction:column;
-    }
-
-    .form-group-full {
-      display:flex;
-      flex-direction:column;
-      margin-bottom:16px;
-    }
-
-    label {
-      display:block;
-      margin-bottom:6px;
-      font-weight:500;
-      font-size:14px;
-      color:var(--white);
-    }
-
-    label span {
-      color:#ff6b6b;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-      width:100%;
-      border-radius:8px;
-      padding:10px 12px;
-      border:1px solid rgba(255,255,255,0.1);
-      background:rgba(255,255,255,0.05);
-      color:var(--white);
-      font-family:inherit;
-      font-size:14px;
-      transition: border-color 0.2s ease;
-    }
-
-    textarea {
-      width:100%;
-      border-radius:8px;
-      padding:10px 12px;
-      border:1px solid rgba(255,255,255,0.1);
-      background:rgba(255,255,255,0.05);
-      color:var(--white);
-      font-family:inherit;
-      font-size:14px;
-      resize:vertical;
-      transition: border-color 0.2s ease;
-    }
-
-    input:focus,
-    textarea:focus {
-      outline:none;
-      border-color:var(--accent);
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color:var(--muted);
-      opacity:0.6;
-    }
-
-    button[type="submit"] {
-      margin-top:4px;
-      padding:12px 28px;
-      border-radius:8px;
-      border:none;
-      background:var(--accent);
-      color:#062024;
-      font-weight:600;
-      cursor:pointer;
-      transition: all 0.2s ease;
-      font-size:15px;
-    }
-
-    button[type="submit"]:hover {
-      background:#08d4f0;
-      transform:translateY(-1px);
-      box-shadow:0 4px 8px rgba(6,182,212,0.3);
+    .contact-container p {
+      color: var(--muted);
+      margin-bottom: 20px;
     }
 
     /* Back to Top Button */
@@ -420,37 +299,6 @@
       color:var(--accent);
     }
 
-    /* Email link styling */
-    a[href^="mailto:"] {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    a[href^="mailto:"]:hover {
-      color: var(--white);
-      text-decoration: underline;
-    }
-
-    /* Form wrapper styling */
-    .form-wrapper {
-      margin-top: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .contact-container h3 {
-      margin-top: 24px;
-      margin-bottom: 12px;
-    }
-
-    .contact-container p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
     /* Responsive Design */
     @media (max-width:768px) {
       .banner {
@@ -473,10 +321,12 @@
 
       nav {
         justify-content:center;
+        gap:6px;
       }
 
-      .form-row {
-        grid-template-columns:1fr;
+      nav a {
+        font-size:12px;
+        padding:6px 8px;
       }
 
       .social-links {
@@ -490,23 +340,20 @@
         height:45px;
       }
     }
-
-    @media (max-width:900px) and (min-width:769px) {
-      .form-row {
-        grid-template-columns:repeat(2, 1fr);
-      }
-    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <!-- Navigation -->
+    <!-- Navigation - 8 Tabs -->
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#research-publications">Research Publications</a>
+      <a href="#projects">Projects</a>
       <a href="#teaching">Teaching</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#publications">Publications</a>
+      <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -523,6 +370,7 @@
       </div>
     </div>
 
+    <!-- About Section -->
     <section id="about" class="card">
       <h2>About Me</h2>
       <p>With a strong interest in the field of Hydrology and Water Resources, My research work centres on "Microplastic contamination in soil in an urban catchment". My aim is to identify potential microplastic contamination soil zones.</p>
@@ -553,14 +401,26 @@
         <li><strong>Hydrological Modeling:</strong> ArcGIS</li>
         <li><strong>Other:</strong> Technical Writing, Data Visualization, Public Speaking</li>
       </ul>
+    </section>
 
-      <h3>Achievements & Awards</h3>
-      <ul>
-        <li><strong>MHRD Fellowship</strong> - M.Tech. Scholarship, IIT Guwahati (2022-2024)</li>
-        <li><strong>GATE</strong> - AIR 185, IIT Kharagpur (2022)</li>
-        <li><strong>National Finalist</strong> - Vittraj Case Study Competition, IIT Kanpur (2021)</li>
-        <li><strong>Silver Medal</strong> - Second Best Academic Performance in the whole batch (Final Semester of Diploma in Survey Engineering) (2015)</li>
-      </ul>
+    <!-- Projects Section -->
+    <section id="projects" class="card">
+      <h2>Research / Academic Projects</h2>
+      
+      <h3>Assessment of Geomorphic Indices in the Nagaland and Manipur regions of the Indo-Burma Wedge (M.TECH.)</h3>
+      <p><strong>Duration:</strong> 2023-2024 | <strong>Role:</strong> Student</p>
+      <p>Comprehensive Assessment of Relative Tectonic Activity using geomorphic indices, lineaments, and multi-criteria decision-making processes. Integrated remote sensing data with field observations to evaluate relative tectonic activity potential in the region.</p>
+      <p><strong>Key Outcomes:</strong> Developed New methodology and Part of the research has been presented in an International Conference.</p>
+
+      <h3>Assessment of Population Density Along Indian Rivers (B.TECH.)</h3>
+      <p><strong>Duration:</strong> 2017-2018 | <strong>Role:</strong> Student</p>
+      <p>Large-scale population density mapping using GPS technology and census data across major Indian river basins. Analyzed distribution of populations on various parts of indian rivers.</p>
+      <p><strong>Tools Used:</strong> GPS, Census Data</p>
+
+      <h3>Small Township Project in Kunda Village, Jharkhand, India (DIPLOMA)</h3>
+      <p><strong>Duration:</strong> 2015 | <strong>Role:</strong> Student</p>
+      <p>Comprehensive township planning including road alignment, drainage design, and infrastructure surveying using modern geospatial technologies (leveling, total stations, GPS) integrated with census data for demographic analysis.</p>
+      <p><strong>Skills Applied:</strong> Land surveying</p>
     </section>
 
     <!-- Teaching Section -->
@@ -582,11 +442,9 @@
       <p>Co-Guided 1 B.Tech. student in his final year project on development of Geomorphic indices using MATLAB. (2023-2024)</p>
     </section>
 
-    <!-- Research Publications Section -->
-    <section id="research-publications" class="card">
-      <h2>Research Publications</h2>
-      
-      <h3>Conference Presentations</h3>
+    <!-- Conferences Section -->
+    <section id="conferences" class="card">
+      <h2>Conference Presentations</h2>
       <ul>
         <li><strong>"Morphometric Analysis of Manipur River Basin Using Geospatial Techniques"</strong>
           <br>RCRM 2024 (River Corridor Research and Management), Fourth International Conference, jointly coordinated by IIT Guwahati & IIT Jammu, March 2024</li>
@@ -599,32 +457,29 @@
         <li><strong>"Applications of Satellite Altimetry for Inland Waterbodies"</strong>
           <br>IIRS Dehradun, 2021</li>
       </ul>
-      
-      <h3>Research Projects</h3>
-      
-      <h4>Assessment of Geomorphic Indices in the Nagaland and Manipur regions of the Indo-Burma Wedge (M.TECH.)</h4>
-      <p><strong>Duration:</strong> 2023-2024 | <strong>Role:</strong> Student</p>
-      <p>Comprehensive Assessment of Relative Tectonic Activity using geomorphic indices, lineaments, and multi-criteria decision-making processes. Integrated remote sensing data with field observations to evaluate relative tectonic activity potential in the region.</p>
-      <p><strong>Key Outcomes:</strong> Developed New methodology and Part of the research has been presented in an International Conference.</p>
+    </section>
 
-      <h4>Assessment of Population Density Along Indian Rivers (B.TECH.)</h4>
-      <p><strong>Duration:</strong> 2017-2018 | <strong>Role:</strong> Student</p>
-      <p>Large-scale population density mapping using GPS technology and census data across major Indian river basins. Analyzed distribution of populations on various parts of indian rivers.</p>
-      <p><strong>Tools Used:</strong> GPS, Census Data</p>
-
-      <h4>Small Township Project in Kunda Village, Jharkhand, India (DIPLOMA)</h4>
-      <p><strong>Duration:</strong> 2015 | <strong>Role:</strong> Student</p>
-      <p>Comprehensive township planning including road alignment, drainage design, and infrastructure surveying using modern geospatial technologies (leveling, total stations, GPS) integrated with census data for demographic analysis.</p>
-      <p><strong>Skills Applied:</strong> Land surveying</p>
-      
-      <h3>Publications</h3>
+    <!-- Publications Section -->
+    <section id="publications" class="card">
+      <h2>Publications</h2>
       <ul>
         <li><strong>"ON THE WAY........"</strong>
           <br>IIT Delhi</li>
       </ul>
     </section>
 
-    <!-- Contact -->
+    <!-- Achievements Section -->
+    <section id="achievements" class="card">
+      <h2>Achievements & Awards</h2>
+      <ul>
+        <li><strong>MHRD Fellowship</strong> - M.Tech. Scholarship, IIT Guwahati (2022-2024)</li>
+        <li><strong>GATE</strong> - AIR 185, IIT Kharagpur (2022)</li>
+        <li><strong>National Finalist</strong> - Vittraj Case Study Competition, IIT Kanpur (2021)</li>
+        <li><strong>Silver Medal</strong> - Second Best Academic Performance in the whole batch (Final Semester of Diploma in Survey Engineering) (2015)</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="card">
       <h2>Contact Me</h2>
       <p><strong>Email (Personal):</strong> <a href="mailto:mitandas2018n@gmail.com">mitandas2018n@gmail.com</a></p>

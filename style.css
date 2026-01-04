@@ -37,12 +37,56 @@ header nav {
 header nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 5px;
   font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* COLORFUL TAB STYLING */
+header nav a:nth-child(1) {
+  background-color: #3498db; /* Home - Blue */
+}
+
+header nav a:nth-child(2) {
+  background-color: #e74c3c; /* About - Red */
+}
+
+header nav a:nth-child(3) {
+  background-color: #2ecc71; /* Projects - Green */
+}
+
+header nav a:nth-child(4) {
+  background-color: #f39c12; /* Teaching - Orange */
+}
+
+header nav a:nth-child(5) {
+  background-color: #9b59b6; /* Conferences - Purple */
+}
+
+header nav a:nth-child(6) {
+  background-color: #1abc9c; /* Publications - Turquoise */
+}
+
+header nav a:nth-child(7) {
+  background-color: #e67e22; /* Achievements - Dark Orange */
+}
+
+header nav a:nth-child(8) {
+  background-color: #34495e; /* Contact - Dark Gray */
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+header nav a:active {
+  transform: translateY(0);
 }
 
 /* BANNER (COVER IMAGE) */
@@ -112,7 +156,7 @@ header nav a:hover {
   margin-bottom: 15px;
 }
 
-* ADVISOR LINK STYLING - NO UNDERLINE, WHITE COLOR */
+/* ADVISOR LINK STYLING - NO UNDERLINE, WHITE COLOR */
 .advisor-link {
   color: white !important;
   text-decoration: none !important;
@@ -200,6 +244,13 @@ header nav a:hover {
   
   .form-wrapper iframe {
     height: 850px;
+  }
+  
+  /* Stack navigation vertically on mobile */
+  header nav a {
+    margin: 5px 2px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 }
 

@@ -68,8 +68,8 @@
       border-radius:8px;
       transition: all 0.2s ease;
       font-size:14px;
-      flex: 1;  /* ADDED: Makes all items take equal width */
-      text-align: center;  /* ADDED: Centers text within each item */
+      flex: 1;
+      text-align: center;
     }
 
     nav a:hover {
@@ -170,9 +170,18 @@
     }
 
     h3 {
-      margin:16px 0 8px;
+      margin:32px 0 12px;
       font-size:18px;
+      color:var(--accent);
+      border-bottom:1px solid rgba(6,182,212,0.2);
+      padding-bottom:6px;
+    }
+
+    h4 {
+      margin:20px 0 8px;
+      font-size:16px;
       color:var(--white);
+      font-weight:600;
     }
 
     .card {
@@ -424,6 +433,24 @@
       text-decoration: underline;
     }
 
+    /* Form wrapper styling */
+    .form-wrapper {
+      margin-top: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-container h3 {
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    .contact-container p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
     /* Responsive Design */
     @media (max-width:768px) {
       .banner {
@@ -478,9 +505,8 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#research publications">Research Publications</a>
+      <a href="#research-publications">Research Publications</a>
       <a href="#teaching">Teaching</a>
-      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -502,8 +528,8 @@
       <p>With a strong interest in the field of Hydrology and Water Resources, My research work centres on "Microplastic contamination in soil in an urban catchment". My aim is to identify potential microplastic contamination soil zones.</p>
   
       <h3>Research Advisor</h3>
-  <p><strong><a href="https://sites.google.com/view/saumavadey-iitd" target="_blank">Dr. Saumava Dey</a></strong>, Assistant Professor, Department of Civil Engineering, IIT Delhi<br>
-  <em>Research Group: <a href="https://sites.google.com/view/saumavadey-iitd/members_hydrosim?authuser=0&pli=1" target="_blank">HydroSIM-IIT Delhi</a></em>
+      <p><strong><a href="https://sites.google.com/view/saumavadey-iitd" target="_blank">Dr. Saumava Dey</a></strong>, Assistant Professor, Department of Civil Engineering, IIT Delhi<br>
+      <em>Research Group: <a href="https://sites.google.com/view/saumavadey-iitd/members_hydrosim?authuser=0&pli=1" target="_blank">HydroSIM-IIT Delhi</a></em></p>
 
       <h3>Education</h3>
       <ul>
@@ -556,18 +582,16 @@
       <p>Co-Guided 1 B.Tech. student in his final year project on development of Geomorphic indices using MATLAB. (2023-2024)</p>
     </section>
 
-<!-- Research Publications Section -->
-<section id="Research Publications" class="card">
-    <h2>Research Publications</h2>    
-      <ul>
-      <!-- Conference Presentations Subsection -->
+    <!-- Research Publications Section -->
+    <section id="research-publications" class="card">
+      <h2>Research Publications</h2>
+      
       <h3>Conference Presentations</h3>
       <ul>
         <li><strong>"Morphometric Analysis of Manipur River Basin Using Geospatial Techniques"</strong>
           <br>RCRM 2024 (River Corridor Research and Management), Fourth International Conference, jointly coordinated by IIT Guwahati & IIT Jammu, March 2024</li>
       </ul>
 
-      <!-- Workshops Attended Subsection -->
       <h3>Workshops Attended</h3>
       <ul>
         <li><strong>"Changing Precipitation-Flood-Precipitation Coupled Cycle in North East Region"</strong>
@@ -576,12 +600,11 @@
           <br>IIRS Dehradun, 2021</li>
       </ul>
       
-     <!-- Research Projects Subsection -->
       <h3>Research Projects</h3>
-      </ul>
+      
       <h4>Assessment of Geomorphic Indices in the Nagaland and Manipur regions of the Indo-Burma Wedge (M.TECH.)</h4>
       <p><strong>Duration:</strong> 2023-2024 | <strong>Role:</strong> Student</p>
-      <p>Comprehensive Assessment of Relative Tectonic Activity using geomorphic indices, lineaments, and multi-criteria decision-making processes. Integrated remote sensing data with field observations to evaluate relative tectonic acitivity potential in the region.</p>
+      <p>Comprehensive Assessment of Relative Tectonic Activity using geomorphic indices, lineaments, and multi-criteria decision-making processes. Integrated remote sensing data with field observations to evaluate relative tectonic activity potential in the region.</p>
       <p><strong>Key Outcomes:</strong> Developed New methodology and Part of the research has been presented in an International Conference.</p>
 
       <h4>Assessment of Population Density Along Indian Rivers (B.TECH.)</h4>
@@ -593,18 +616,16 @@
       <p><strong>Duration:</strong> 2015 | <strong>Role:</strong> Student</p>
       <p>Comprehensive township planning including road alignment, drainage design, and infrastructure surveying using modern geospatial technologies (leveling, total stations, GPS) integrated with census data for demographic analysis.</p>
       <p><strong>Skills Applied:</strong> Land surveying</p>
-      </ul>
       
-    <!-- Publications Subsection -->
-    <h3>Publications </h3>
+      <h3>Publications</h3>
       <ul>
         <li><strong>"ON THE WAY........"</strong>
-          <br>IIT Delhi </li>
+          <br>IIT Delhi</li>
       </ul>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="card contact">
+    <section id="contact" class="card">
       <h2>Contact Me</h2>
       <p><strong>Email (Personal):</strong> <a href="mailto:mitandas2018n@gmail.com">mitandas2018n@gmail.com</a></p>
       <p><strong>Email (Institutional):</strong> <a href="mailto:cez258485@iitd.ac.in">cez258485@iitd.ac.in</a></p>
@@ -618,30 +639,28 @@
         Hauz Khas, New Delhi - 110016, India
       </p>
 
- <!-- CONTACT SECTION -->
-<section id="contact">
-  <div class="contact-container">
-    <h3>Want to Connect?</h3>
-    <p>Feel free to reach out for research collaborations, academic discussions, or consulting opportunities. I'm always interested in projects related to application of Geospatial techniques in Hydrology and Water Resources Engineering.</p>
+      <div class="contact-container">
+        <h3>Want to Connect?</h3>
+        <p>Feel free to reach out for research collaborations, academic discussions, or consulting opportunities. I'm always interested in projects related to application of Geospatial techniques in Hydrology and Water Resources Engineering.</p>
 
-    <!-- Google Forms Embed -->
-    <div class="form-wrapper">
-      <iframe 
-        src="https://forms.gle/PVqyXRisbGULXwWZ9" 
-        width="100%" 
-        height="950" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0">
-        Loading…
-      </iframe>
-    </div>
-  </div>
-</section>
+        <!-- Google Forms Embed -->
+        <div class="form-wrapper">
+          <iframe 
+            src="https://forms.gle/PVqyXRisbGULXwWZ9" 
+            width="100%" 
+            height="950" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <p>© 2025 Mitan Das. All Rights Reserved.</p>
-      <p style="font-size:12px; margin-top:8px;">Last Updated: December 2025</p>
+      <p style="font-size:12px; margin-top:8px;">Last Updated: January 2026</p>
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#contact">Contact</a>

@@ -620,6 +620,30 @@
         }
       });
     });
+     
+    // Image Slider with Buttons - ADD THIS CODE HERE
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      if (index >= slides.length) {
+        currentSlideIndex = 0;
+      } else if (index < 0) {
+        currentSlideIndex = slides.length - 1;
+      } else {
+        currentSlideIndex = index;
+      }
+      
+      slides[currentSlideIndex].classList.add('active');
+    }
+
+    function moveSlide(direction) {
+      showSlide(currentSlideIndex + direction);
+    }
+
+    showSlide(0);
   </script>
 </body>
 </html>

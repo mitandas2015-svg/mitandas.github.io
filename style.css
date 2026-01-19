@@ -101,7 +101,7 @@ header nav a:active {
   overflow: hidden;
 }
 
-/* Slideshow images */
+/* Slideshow images - Modified for auto-animation */
 .banner .slide {
   position: absolute;
   top: 0;
@@ -110,12 +110,38 @@ header nav a:active {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
   z-index: 0;
+  animation: slideShow 20s infinite;
 }
 
-.banner .slide.active {
-  opacity: 1;
+/* Stagger each image's animation */
+.banner .slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.banner .slide:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.banner .slide:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.banner .slide:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.banner .slide:nth-child(5) {
+  animation-delay: 16s;
+}
+
+/* Animation keyframes for fade in/out */
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 /* Dark overlay (your original effect, preserved) */
